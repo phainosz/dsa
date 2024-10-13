@@ -123,6 +123,10 @@
 ## Queue
 
 ## Stack
+- **Stack** ou pilha, é uma estrutura de dados, usa o conceito **LIFO(last in first out)**.
+- Ex:
+  - [Go](./golang/3]
+  - [Java](./java/3]
 
 ## Hash
 
