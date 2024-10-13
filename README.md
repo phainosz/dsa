@@ -87,45 +87,27 @@
     - Diferente dos outros operadores, não necessita de dois parâmetros para realizar a operação.
     - Faz a troca dos bits do valor sendo operado.
     - Ex: `100` resultaria nos bits `011`
+    - `~1` = 0
+    - `~0` = 1
   - **Left shifting**
     - Usa dois operadores, `a<<b`, a é o valor a sofrer a mudança nos bits, b é a quantidade de *bits* que queremos trocar.
-    - Pode ser representado matematicamente como: **a\*(2^b)**.
+    - Os bits serão movidos para equerda conforme a quantidade de posições que indicamos.
     - Nunca usar números negativos como parâmetro, terá um comportamento inesperado.
     - Cuidade ao usar parâmetros maiores que a quantidade suportada pelo tipo da variável usada. Por exemplo: `a<<33` a sendo armazenado em variável de 32 bits.
-    <details>
-    <summary>Ex:</summary>
-
-    ```go
-    func main() {
-      // a = 5(00000101), b = 9(00001001)
-      a, b := 5, 9
-
-      fmt.Printf("a value: %d\n", a)
-      fmt.Printf("a in binary: %08b\n", a)
-      fmt.Printf("a in binary left shifting: %08b\n", a<<1)
-      fmt.Printf("a value after left shifting: %d\n\n", a<<1)
-
-      fmt.Printf("b value: %d\n", b)
-      fmt.Printf("b in binary: %08b\n", b)
-      fmt.Printf("b in binary left shifting: %08b\n", b<<1)
-      fmt.Printf("b value after left shifting: %d\n", b<<1)
-      
-      //outputs
-      //a value: 5
-      //a in binary: 101
-      //a in binary left shifting: 1010
-      //a value after left shifting: 10
-
-      //b value: 9
-      //b in binary: 1001
-      //b in binary left shifting: 10010
-      //b value after left shifting: 18
-    }
-    ```
-    </details>
+    - Ex:
+      - [Go](./golang/1-bitwise/bitwise.go)
+      - [Java](./java/1-bitwise/Bitwise.java)
   - **Right shifting**
+    - Semelhante ao **left shifting**, diferença é o sentido que vai para a direita.
+    - `a>>b` segue as mesmas regras do **left shifting**.
 
 ## Array
+- **Arrays** são estruturas de dados lineares que guardam elementos do mesmo tipo de dado.
+- São alocados de forma contígua em memória, o que significa, é um espaço de memória com o tamanho da estutura, onde cada elemento está alocado sequencialmente em um indice do espaço alocado.
+- Cada item é indexado e começa no **index** 0. Podemos acessar um elemento diretamente através do seu índice.
+- Ex:
+  - [Go](./golang/2-array/array.go)
+  - [Java](./java/2-array/Array.java)
 
 ## Searching Algorithms
 ### Linear Search
