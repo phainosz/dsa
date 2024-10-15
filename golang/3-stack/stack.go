@@ -1,4 +1,4 @@
-package main
+package stack
 
 import (
 	"fmt"
@@ -17,12 +17,12 @@ type Stack[T number] struct {
 	heigth uint
 }
 
-func (s Stack[T]) Peek() {
+func (s Stack[T]) Peek() (T, error) {
 	if s.heigth == 0 || s.top == nil {
 		fmt.Println("Empty stack")
-		return
+		return 0, fmt.Errorf("empty stack")
 	}
-	fmt.Printf("Peeked value: %v\n", s.top.value)
+	return s.top.value, nil
 }
 
 func (s *Stack[T]) Push(value T) {
@@ -39,10 +39,10 @@ func (s *Stack[T]) Push(value T) {
 	s.heigth++
 }
 
-func (s *Stack[T]) Pop() Node[T] {
+func (s *Stack[T]) Pop() (Node[T], error) {
 	if s.top == nil || s.heigth == 0 {
 		var nilNode Node[T]
-		return nilNode
+		return nilNode, fmt.Errorf("stack has no value to pop")
 	}
 
 	node := s.top
@@ -50,27 +50,12 @@ func (s *Stack[T]) Pop() Node[T] {
 	node.next = nil
 	s.heigth--
 
-	return *node
+	return *node, nil
 }
 
 func NewStack[T number]() Stack[T] {
 	return Stack[T]{
-		heigth: 1,
+		heigth: 0,
 		top:    nil,
 	}
-}
-
-func main() {
-	stack := NewStack[int]()
-
-	stack.Peek()
-	stack.Push(2)
-	stack.Push(4)
-	stack.Peek()
-	node := stack.Pop()
-	fmt.Println("Popped item", node.value)
-	stack.Peek()
-	node = stack.Pop()
-	fmt.Println("Popped item", node.value)
-	stack.Peek()
 }
