@@ -121,12 +121,18 @@
 ## Linked List
 
 ## Queue
+- **Queue** ou fila, é uma estrutura de dados, usa o conceito **FIFO(first in first out)**.
+- O primeiro elemento inserido será o primeiro a sair da estrutura.
+- 
+- Ex:
+  - [Go](./golang/4-queue/queue.go)
+  - [Java](./java/4-queue/Main.java)
 
 ## Stack
 - **Stack** ou pilha, é uma estrutura de dados, usa o conceito **LIFO(last in first out)**.
 - Ex:
-  - [Go](./golang/3]
-  - [Java](./java/3]
+  - [GO](./golang/3-stack/stack.go)
+  - [Java](./java/3-stack/Main.java)
 
 ## Hash
 
