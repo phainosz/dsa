@@ -117,13 +117,22 @@
 ### Bubble Sort
 
 ## Recursion
+- É uma técnica quando uma **função** chama ela mesmo.
+- Geralmente usada para resolver um problema que pode ser quebrado em problemas menores nos quais são resolvidos *recursivamente*.
+- A cada chamada da função, será criada uma pilha com o item atual no topo, esse processo continua até o caso base ser atingido, que é a condição que para a **recursão**. Quando o caso base ocorre, a função volta o ciclo seguindo a sequência da pilha de chamadas e retornando os seus resultados.
+- Geralmente temos 3 partes em **recursão**:
+  - Caso base: que é a condição que para a **recursão**.
+  - Caso recursivo; que é quando a função faz a chamada de sí mesma com um pedaço menor do problema.
+  - Retorno/resultado: é quando a recursão termina e combina o resultado da pilha de execução.
+- Ex:
+  - [Go](./golang/5)
+  - [Java](./java/5-recursion/Main.java)
 
 ## Linked List
 
 ## Queue
 - **Queue** ou fila, é uma estrutura de dados, usa o conceito **FIFO(first in first out)**.
 - O primeiro elemento inserido será o primeiro a sair da estrutura.
-- 
 - Ex:
   - [Go](./golang/4-queue/queue.go)
   - [Java](./java/4-queue/Main.java)
