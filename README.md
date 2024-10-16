@@ -5,6 +5,10 @@
 - [Big O](#big-o)
 - [Algoritimos Bitwise](#bitwise-algorithms)
 - [Array](#array)
+- [Recusion](#recursion)
+- [Linked Lists](#linked-list)
+- [Queue](#queue)
+- [Stack](#stack)
 - [Searching Algorithms](#searching-algorithms)
 - [Sorting Algorithms](#sorting-algorithms)
 
@@ -109,13 +113,6 @@
   - [Go](./golang/2-array/array.go)
   - [Java](./java/2-array/Array.java)
 
-## Searching Algorithms
-### Linear Search
-### Binary Search
-
-## Sorting Algorithms
-### Bubble Sort
-
 ## Recursion
 - É uma técnica quando uma **função** chama ela mesmo.
 - Geralmente usada para resolver um problema que pode ser quebrado em problemas menores nos quais são resolvidos *recursivamente*.
@@ -125,23 +122,42 @@
   - Caso recursivo; que é quando a função faz a chamada de sí mesma com um pedaço menor do problema.
   - Retorno/resultado: é quando a recursão termina e combina o resultado da pilha de execução.
 - Ex:
-  - [Go](./golang/5)
-  - [Java](./java/5-recursion/Main.java)
+  - [Go](./golang/3-recursion/recursion.go)
+  - [Java](./java/3-recursion/Main.java)
 
 ## Linked List
+- São estruturas de dados lineares que armazenam os dados em nós que são conectados por ponteiros.
+- Diferentemente de **arrays**, não são armazenados de forma contígua em memória.
+- Podem ser facilmente alterada no seu tamanho, adicionando ou removendo nós.
+- Acessados de forma sequencial, através do inicio(head).
+- Tipos mais usados de **linked lists**:
+  - **Singly linked list** cada nó aponta para o próximo item.
+  - **Doubly linked list** cada nós aponta para o próximo nó e para o anterior.
+  - **Cirular linked list** o último nó aponta para o primeiro nó, formando um circulo.
+- Ex:
+  - [Go](./golang/4-linkedlist/linkedlist.go)
+  - [Java](./java/4-linkedlist/Main.java)
 
 ## Queue
 - **Queue** ou fila, é uma estrutura de dados, usa o conceito **FIFO(first in first out)**.
 - O primeiro elemento inserido será o primeiro a sair da estrutura.
 - Ex:
-  - [Go](./golang/4-queue/queue.go)
-  - [Java](./java/4-queue/Main.java)
+  - [Go](./golang/5-queue/queue.go)
+  - [Java](./java/5-queue/Main.java)
 
 ## Stack
 - **Stack** ou pilha, é uma estrutura de dados, usa o conceito **LIFO(last in first out)**.
 - Ex:
-  - [GO](./golang/3-stack/stack.go)
-  - [Java](./java/3-stack/Main.java)
+  - [GO](./golang/6-stack/stack.go)
+  - [Java](./java/6-stack/Main.java)
+
+## Searching Algorithms
+### Linear Search
+### Binary Search
+
+## Sorting Algorithms
+### Bubble Sort
+
 
 ## Hash
 
