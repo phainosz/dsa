@@ -3,7 +3,7 @@
 - [Introdução](#introdução)
 - [Time complexity](#time-complexity)
 - [Big O](#big-o)
-- [Algoritimos Bitwise](#bitwise-algorithms)
+- [Bitwise Algorithms](#bitwise-algorithms)
 - [Array](#array)
 - [Recusion](#recursion)
 - [Linked Lists](#linked-list)
@@ -60,7 +60,7 @@
 - *Drop Non-Dominants* é quando tempo algo como *O(n^2 +n)*, simplificamos para *O(n^2)*.
   - Loops aninhados crescem mais rápidos que um loop simples, com isso o tempo maior seria do loop aninhado, por isso ignoramos o outro.
     
-## Algoritimos Bitwise
+## Bitwise Algorithms
 - São algoritimos para fazer operação individual em **bits**.
 - Estes algoritimos que manipulam a representação de números binários.
 - Geralmente usados em sistemas de baixo nível, como criptografia, otimizações de tarefas onde manipular os *bits* de forma individual é vantajoso.
@@ -152,7 +152,22 @@
   - [Java](./java/6-stack/Main.java)
 
 ## Searching Algorithms
+- São essenciais para encontrar itens especificos dentro de uma coleção de dados.
+- Os algoritimos mais comuns são: **linear search** e **binary search**.
+
 ### Linear Search
+- É denifido com um algoritimo sequencial, que começa no primeiro elemento e percorre a cada elemento atẽ encontrar o elemento especifico, ou chegar ao final da estrutura.
+- Pode ser quebrados em passos a serem seguidos:
+  - Ponto de partida no primeiro elemento da coleção de dados.
+  - Comparar cada elemento se coincide com o elemento desejado.
+  - Encontrado o item desejado, interromper a busca e retorna o *index* do item ou true.
+  - Mover para o próximo elemento caso não encontrar o item na posição atual.
+  - Repetir até o final da coleção.
+  - Não encontrado o item, retornar informando que o item não foi encontrado.
+- Ex:
+  - [GO](./golang/7-linearsearch/linearsearch.go)
+  - [Java](./java/7-linearsearch/Main.java)
+
 ### Binary Search
 
 ## Sorting Algorithms
