@@ -7,20 +7,21 @@ public class Main {
   }
 
   public static void main(String[] args) {
+    var main = new Main();
 
-    int[] array = new int[] { 10, 88, 76, 45, 80, 0, 1, 2, 15 };
-    var tests = prepareValues(array);
+    int[] array = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    var tests = main.prepareValues(array);
 
     for (var test : tests) {
-      var result = linearSearch(array, test.needle);
+      var result = main.binarySearch(array, test.needle);
 
-      compareIndexes(test.expected, result);
+      main.compareIndexes(test.expected, result);
       System.out.printf("searched finnished successful for needle %d with index %d\n", test.needle, result);
     }
 
   }
 
-  private static List<DummyTest> prepareValues(int[] array) {
+  private List<DummyTest> prepareValues(int[] array) {
     var tests = new ArrayList<DummyTest>();
     tests.add(new DummyTest(-1, 999));
     tests.add(new DummyTest(-1, 1099));
@@ -32,19 +33,30 @@ public class Main {
     return tests;
   }
 
-  private static int linearSearch(int[] array, int needle) {
-    for (int i = 0; i < array.length; i++) {
-      if (array[i] == needle) {
-        return i;
+  private int binarySearch(int[] arr, int needle) {
+    var left = 0;
+    var right = arr.length - 1;
+
+    while (left <= right) {
+
+      var mid = left + (right - left) / 2;
+
+      if (arr[mid] == needle) {
+        return mid;
+      }
+
+      if (arr[mid] < needle) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
       }
     }
+
     return -1;
   }
 
-  private static void compareIndexes(int expected, int got) {
-    if (expected != got) {
-      System.out.printf("expected %d and got %d\n", expected, got);
+  private void compareIndexes(int expected, int got) {
+    if (expected != got)
       throw new RuntimeException("linear search failed");
-    }
   }
 }

@@ -158,17 +158,29 @@
 ### Linear Search
 - É denifido com um algoritimo sequencial, que começa no primeiro elemento e percorre a cada elemento atẽ encontrar o elemento especifico, ou chegar ao final da estrutura.
 - Pode ser quebrados em passos a serem seguidos:
-  - Ponto de partida no primeiro elemento da coleção de dados.
-  - Comparar cada elemento se coincide com o elemento desejado.
-  - Encontrado o item desejado, interromper a busca e retorna o *index* do item ou true.
-  - Mover para o próximo elemento caso não encontrar o item na posição atual.
-  - Repetir até o final da coleção.
-  - Não encontrado o item, retornar informando que o item não foi encontrado.
+  - *Passo 1* Ponto de partida no primeiro elemento da coleção de dados.
+  - *Passo 2* Comparar cada elemento se coincide com o elemento desejado.
+  - *Passo 3* Encontrado o item desejado, interromper a busca e retorna o *index* do item ou true.
+  - *Passo 4* Mover para o próximo elemento caso não encontrar o item na posição atual.
+  - *Passo 5* Repetir até o final da coleção.
+  - *Passo 6* Não encontrado o item, retornar informando que o item não foi encontrado.
 - Ex:
   - [GO](./golang/7-linearsearch/linearsearch.go)
   - [Java](./java/7-linearsearch/Main.java)
 
 ### Binary Search
+- É um algoritmo de busca usado em *arrays ordenados*, caso contrário não irã funcionar da forma esperada.
+- Usa o principio de **divide and conquer (dividir e conquistar)**, divide o o array pela metade repetidamente até encontrar o elemento buscado ou não encontrá-lo.
+- Busca o elemento do meio, compara com o elemento buscado e decide qual lado após a divisão irá ser usado, faz isso repetidamente.
+- O passo a passo é o seguinte:
+  - *Passo 1* encontrar o elemento do meio e comprar com o elemento buscado, se o item do meio ser o item buscado, retornar a posição do elemento do meio.
+  - *Passo 2* se o elemento do meio não for igual, checar se ele mé maior ou menor que o elemento do meio.
+  - *Passo 3* se maior, seguir para a busca no lado direito, senão, buscar no lado direito.
+  - *Passo 4* repetir *passos 1, 2 e 3* até o tamanho do array final ser 1.
+  - *Passo 5* se não encontrar o elemento buscado no array, retornar informando que o item não foi encontrado.
+- Ex:
+  - [GO](./golang/8-binarysearch/binarysearch.go)
+  - [Java](./java/8-binarysearch/Main.java)
 
 ## Sorting Algorithms
 ### Bubble Sort

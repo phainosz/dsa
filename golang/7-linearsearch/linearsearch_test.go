@@ -8,16 +8,10 @@ type dataTest struct {
 	expectedError bool
 }
 
-var collection = []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+var collection = []int{9, 19, 10, 14, 15, 0, 2, 3}
 
 func TestLinearSearch(t *testing.T) {
-	tests := []dataTest{
-		{needle: 0, expectedIndex: 0, expectedError: false},
-		{needle: 1, expectedIndex: 1, expectedError: false},
-		{needle: 2, expectedIndex: 2, expectedError: false},
-		{needle: 10, expectedIndex: -1, expectedError: true},
-		{needle: 11, expectedIndex: -1, expectedError: true},
-	}
+	tests := prepareDataTest(collection)
 
 	for _, test := range tests {
 		indexFound, err := linearsearch(collection, test.needle)
@@ -32,4 +26,17 @@ func TestLinearSearch(t *testing.T) {
 
 	}
 
+}
+
+func prepareDataTest(arr []int) []dataTest {
+	var tests []dataTest
+	for i, v := range arr {
+		test := dataTest{v, i, false}
+		tests = append(tests, test)
+	}
+	tests = append(tests, dataTest{11, -1, true})
+	tests = append(tests, dataTest{99, -1, true})
+	tests = append(tests, dataTest{999, -1, true})
+
+	return tests
 }
