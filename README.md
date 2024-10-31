@@ -16,8 +16,11 @@
 - Estrutura de dados e algoritimos são fundamentais em ciência da computação, nos ajudam a organizar e processar dados de forma eficiente.
 - São usados para resolver problemas e desafios em software, desde gerenciar grandes volumes de dados até otimizar a velocidade de atividades.
 - Em DSA, o foco principal é resolver problemas de forma eficiente e eficaz. Para determinar a eficiência do algoritmo, olhamos para dois tipos de complexidade:
-  - **Time complexity**, tempo demorado para execução do algoritmo.
-  - **Space complexity**, quantidade de memória o algoritmo usa.
+  - **Time complexity**, tempo de execução do algoritmo.
+  - **Space complexity**, quantidade de memória usada do algoritmo.
+- As estruturas de dados, podem ser divididas em dois tipos basicamente: *linear* e *não linear*:
+  - *linear* os elementos são organizados em sequência, um após o outro. Por exemplo, *arrays*, *queues* e *stacks*.
+  - *não linear* os elementos não possuem sequência alguma, ao invés disso, são organizados em hierarquia, um elemento pode estar conectado em um ou mais elementos, são dividios em dois grupos, *graph* e *tree*.
 
 ## Time complexity
 - Quantifica o tempo total gasto por um algoritmo executar em função do tamanho da entrada de dados, não o tempo gasto da máquina que o executou.
@@ -108,7 +111,7 @@
 ## Array
 - **Arrays** são estruturas de dados lineares que guardam elementos do mesmo tipo de dado.
 - São alocados de forma contígua em memória, o que significa, é um espaço de memória com o tamanho da estutura, onde cada elemento está alocado sequencialmente em um indice do espaço alocado.
-- Cada item é indexado e começa no **index** 0. Podemos acessar um elemento diretamente através do seu índice.
+- Cada item é indexado e começa no **index** 0 na maioria das linguagens. Podemos acessar um elemento diretamente através do seu índice.
 - Ex:
   - [Go](./golang/2-array/array.go)
   - [Java](./java/2-array/Array.java)
