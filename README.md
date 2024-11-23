@@ -5,6 +5,7 @@
 - [Big O](#big-o)
 - [Bitwise Algorithms](#bitwise-algorithms)
 - [Array](#array)
+- [Two Pointer Technique](#two-pointer-technique)
 - [Recusion](#recursion)
 - [Linked Lists](#linked-list)
 - [Queue](#queue)
@@ -114,7 +115,40 @@
 - Cada item é indexado e começa no **index** 0 na maioria das linguagens. Podemos acessar um elemento diretamente através do seu índice.
 - Ex:
   - [Go](./golang/2-array/array.go)
-  - [Java](./java/2-array/Array.java)
+  - [Java](./java/2-array/Main.java)
+
+## Two Pointer Technique
+- É uma ténica muito usada para resolver problemas usando **arrays** ou **strings**.
+- Usa dois *ponteiros* que percorrem os elementos, podendo ser de direções opostas(inicio e fim) ou mesma direção com passos diferentes, dependendo do problema.
+- Exemplos:
+  ```
+    // reverse array
+    function reverse(arr)
+      left = 0
+      right = arr length -1      
+
+      while left < right 
+        // swap elements at left and right pointers
+        tmp = arr[left]
+        arr[left] = arr[right]
+        arr[right] = tmp
+
+        left++ // move left pointer to the right
+        right-- // move right pointer to the left
+      
+    function isPalindrome(str):
+      // str: string to check for palindrome
+      left = 0
+      right = arr length -1
+
+      while left < right
+        if str[left] != str[right] // if characters at the pointers do not match
+            return false // return false (not a palindrome)
+        left++ // move left pointer to the right
+        right-- // move right pointer to the left
+
+      return true
+  ```
 
 ## Recursion
 - É uma técnica quando uma **função** chama ela mesmo.
@@ -125,6 +159,17 @@
   - Caso recursivo; que é quando a função faz a chamada de sí mesma com um pedaço menor do problema.
   - Retorno/resultado: é quando a recursão termina e combina o resultado da pilha de execução.
 - Ex:
+    ```
+      function fibonacci(n)
+        // base case: if n is 0 or 1, return n
+        if n == 0
+        return n
+        else if n == 1
+        return 1
+
+        // recursive case: sum of two previous fibonacci numbers
+        return fibonacci(n -1) + fibonacci(n -2)
+    ```
   - [Go](./golang/3-recursion/recursion.go)
   - [Java](./java/3-recursion/Main.java)
 
@@ -168,6 +213,16 @@
   - *Passo 5* Repetir até o final da coleção.
   - *Passo 6* Não encontrado o item, retornar informando que o item não foi encontrado.
 - Ex:
+  ```
+    function linearSearch(array, target)
+      // target is the value we're searching for
+
+      for element in array
+        if element == target
+          return element index
+      
+      return -1
+  ```
   - [GO](./golang/7-linearsearch/linearsearch.go)
   - [Java](./java/7-linearsearch/Main.java)
 
@@ -176,12 +231,31 @@
 - Usa o principio de **divide and conquer (dividir e conquistar)**, divide o o array pela metade repetidamente até encontrar o elemento buscado ou não encontrá-lo.
 - Busca o elemento do meio, compara com o elemento buscado e decide qual lado após a divisão irá ser usado, faz isso repetidamente.
 - O passo a passo é o seguinte:
-  - *Passo 1* encontrar o elemento do meio e comprar com o elemento buscado, se o item do meio ser o item buscado, retornar a posição do elemento do meio.
+  - *Passo 1* encontrar o elemento do meio e comparar com o elemento buscado, se o item do meio ser o item buscado, retornar a posição do elemento do meio.
   - *Passo 2* se o elemento do meio não for igual, checar se ele mé maior ou menor que o elemento do meio.
   - *Passo 3* se maior, seguir para a busca no lado direito, senão, buscar no lado direito.
   - *Passo 4* repetir *passos 1, 2 e 3* até o tamanho do array final ser 1.
   - *Passo 5* se não encontrar o elemento buscado no array, retornar informando que o item não foi encontrado.
 - Ex:
+  ```
+    function binarySearch(array, target)
+      // array need to be sorted
+      // target is the value we're searching for
+      
+      left = 0
+      right = array length -1
+
+      while left <= right
+        mid = left + (right - left) / 2
+        
+        if array[mid] == target // check if middle element is the target
+          return mid
+        else if array[mid] < target // if target is greater, search the right half
+          left = mid + 1
+        else // if target is smaller, search the left half
+          right = mid - 1       
+      return -1
+  ```
   - [GO](./golang/8-binarysearch/binarysearch.go)
   - [Java](./java/8-binarysearch/Main.java)
 
