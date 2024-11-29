@@ -10,6 +10,7 @@
 - [Linked Lists](#linked-list)
 - [Queue](#queue)
 - [Stack](#stack)
+- [Hash](#hash)
 - [Searching Algorithms](#searching-algorithms)
 - [Sorting Algorithms](#sorting-algorithms)
 
@@ -34,31 +35,31 @@
 - Não é usado como uma medida exata, e sim uma forma de generalizar o crescimento e complexidade gasto no algoritmo.
 - Auxilia em tomadas de deciões sobre qual algoritmo ou extrutura de dados usar.
 
-#### O(1)
+### O(1)
 - Algoritmo com tempo constante.
 - Não depende do tamanho da entrada de dados, executa apenas uma vez.
 - Verificar o valor de uma posição do **array** usando indice é constante.
 
-#### O(n)
+### O(n)
 - Algoritimo tem crescimento linear.
 - Depende do tamanho da entrada de dado.
 - Percorrer um **array** é O(n).
 
-#### O(log n)
+### O(log n)
 - Algoritimo com tempo logaritimico.
 - Quando o tamanho da estrutura de dado diminui em cada passo executado.
 - **Binary search** é um exemplo deste caso. A estrutura é dividade em pedaços menores.
 
-#### O(n^2)
+### O(n^2)
 - Algoritimo com tempo elevado ao quadrado.
 - A performance e diretamente relacionada com o tamanho da estrutura ao quadrado.
 - Loops aninhados podem ser um exemplo para este caso.
 
-#### O(2^n)
+### O(2^n)
 - Algoritimo com tempo exponencial.
 - Resolução do algoritmo de fibbonaci usando recursão é um exemplo para tempo exponencial.
 
-#### Regras de simplificação
+### Regras de simplificação
 - *Drop constants* é quando tempo algo como *O(n + n)*, simplificamos para *O(n)*.
   - Dois loops em sequência pode ser um exemplo disso.
 - *Drop Non-Dominants* é quando tempo algo como *O(n^2 +n)*, simplificamos para *O(n^2)*.
@@ -122,32 +123,32 @@
 - Usa dois *ponteiros* que percorrem os elementos, podendo ser de direções opostas(inicio e fim) ou mesma direção com passos diferentes, dependendo do problema.
 - Exemplos:
   ```
-    // reverse array
-    function reverse(arr)
-      left = 0
-      right = arr length -1      
+  // reverse array
+  function reverse(arr)
+    left = 0
+    right = arr length -1      
 
-      while left < right 
-        // swap elements at left and right pointers
-        tmp = arr[left]
-        arr[left] = arr[right]
-        arr[right] = tmp
+    while left < right 
+      // swap elements at left and right pointers
+      tmp = arr[left]
+      arr[left] = arr[right]
+      arr[right] = tmp
 
-        left++ // move left pointer to the right
-        right-- // move right pointer to the left
-      
-    function isPalindrome(str):
-      // str: string to check for palindrome
-      left = 0
-      right = arr length -1
+      left++ // move left pointer to the right
+      right-- // move right pointer to the left
+    
+  function isPalindrome(str):
+    // str: string to check for palindrome
+    left = 0
+    right = arr length -1
 
-      while left < right
-        if str[left] != str[right] // if characters at the pointers do not match
-            return false // return false (not a palindrome)
-        left++ // move left pointer to the right
-        right-- // move right pointer to the left
+    while left < right
+      if str[left] != str[right] // if characters at the pointers do not match
+          return false // return false (not a palindrome)
+      left++ // move left pointer to the right
+      right-- // move right pointer to the left
 
-      return true
+    return true
   ```
 
 ## Recursion
@@ -160,15 +161,15 @@
   - Retorno/resultado: é quando a recursão termina e combina o resultado da pilha de execução.
 - Ex:
     ```
-      function fibonacci(n)
-        // base case: if n is 0 or 1, return n
-        if n == 0
-        return n
-        else if n == 1
-        return 1
+    function fibonacci(n)
+      // base case: if n is 0 or 1, return n
+      if n == 0
+      return n
+      else if n == 1
+      return 1
 
-        // recursive case: sum of two previous fibonacci numbers
-        return fibonacci(n -1) + fibonacci(n -2)
+      // recursive case: sum of two previous fibonacci numbers
+      return fibonacci(n -1) + fibonacci(n -2)
     ```
   - [Go](./golang/3-recursion/recursion.go)
   - [Java](./java/3-recursion/Main.java)
@@ -199,6 +200,8 @@
   - [GO](./golang/6-stack/stack.go)
   - [Java](./java/6-stack/Main.java)
 
+## Hash
+
 ## Searching Algorithms
 - São essenciais para encontrar itens especificos dentro de uma coleção de dados.
 - Os algoritimos mais comuns são: **linear search** e **binary search**.
@@ -214,14 +217,14 @@
   - *Passo 6* Não encontrado o item, retornar informando que o item não foi encontrado.
 - Ex:
   ```
-    function linearSearch(array, target)
-      // target is the value we're searching for
+  function linearSearch(array, target)
+    // target is the value we're searching for
 
-      for element in array
-        if element == target
-          return element index
-      
-      return -1
+    for element in array
+      if element == target
+        return element index
+    
+    return -1
   ```
   - [GO](./golang/7-linearsearch/linearsearch.go)
   - [Java](./java/7-linearsearch/Main.java)
@@ -238,32 +241,29 @@
   - *Passo 5* se não encontrar o elemento buscado no array, retornar informando que o item não foi encontrado.
 - Ex:
   ```
-    function binarySearch(array, target)
-      // array need to be sorted
-      // target is the value we're searching for
-      
-      left = 0
-      right = array length -1
+  function binarySearch(array, target)
+    // array need to be sorted
+    // target is the value we're searching for
+    
+    left = 0
+    right = array length -1
 
-      while left <= right
-        mid = left + (right - left) / 2
-        
-        if array[mid] == target // check if middle element is the target
-          return mid
-        else if array[mid] < target // if target is greater, search the right half
-          left = mid + 1
-        else // if target is smaller, search the left half
-          right = mid - 1       
-      return -1
+    while left <= right
+      mid = left + (right - left) / 2
+      
+      if array[mid] == target // check if middle element is the target
+        return mid
+      else if array[mid] < target // if target is greater, search the right half
+        left = mid + 1
+      else // if target is smaller, search the left half
+        right = mid - 1       
+    return -1
   ```
   - [GO](./golang/8-binarysearch/binarysearch.go)
   - [Java](./java/8-binarysearch/Main.java)
 
 ## Sorting Algorithms
 ### Bubble Sort
-
-
-## Hash
 
 ## Tree
 
