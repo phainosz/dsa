@@ -70,21 +70,21 @@
 - Estes algoritimos que manipulam a representação de números binários.
 - Geralmente usados em sistemas de baixo nível, como criptografia, otimizações de tarefas onde manipular os *bits* de forma individual é vantajoso.
 - Existem várias formas de operações **bitwise**, as mais conhecidas são: *AND(&)*, *OR(|)*, *XOR(^)*, *NOT(~)*, *left shifting(<<)* e *right shifting(>>)*.
-- **Bit shifting** troca o **bit** de posição usando um valor de entrada como quantidade de *bits* a serem trocados.
+- **Bit shifting** desloca os bits de um valor para a esquerda ou direita, usando um número que define quantas posições serão movidas.
   - **Operador AND (&)**
-    - Faz a comparação de dois parâmetros, se o valor do bit comparado na posição for 1 em ambos, o retorno é 1, senão, será 0.
-    - Ex: `111 & 100` os bits resultantes serão `100`, pois só a primeira posição teve os dois parâmetros o bit 1. Se fosse `111 & 001` o resultado seria `001`.
+    - Faz a comparação de dois operandos, se o valor do bit comparado na posição for 1 em ambos, o retorno é 1, senão, será 0.
+    - Ex: `111 & 100` os bits resultantes serão `100`, pois só a primeira posição teve os dois operandos com bit 1. Se fosse `111 & 001` o resultado seria `001`.
     - `0 & 0` = 0
     - `0 & 1` = 0
     - `1 & 0` = 0
     - `1 & 1` = 1
   - **Operador OR (|)**
-    - Faz a comparação de dois parâmetros, se o valor do bit comparado na posição for 0 em ambos, o retorno será 0, senão, será 1.
+    - Faz a comparação de dois operandos, se o valor do bit comparado na posição for 0 em ambos, o retorno será 0, senão, será 1.
     - Ex: `111 | 100` os bits resultantes serão `111`, pois nenhuma posição comparada teve os bits em ambos sendo 0. Se fosse `110 | 010` o resultado seria `110`.
-    - `0 | 0` = 1
+    - `0 | 0` = 0
     - `0 | 1` = 1
     - `1 | 0` = 1
-    - `1 | 1` = 0
+    - `1 | 1` = 1
   - **Operador XOR (^)**
     - Chamado de ou exclusivo. Se o bit na posição comparada não for igual, o retorno é 1, no caso, opostos se tornam 1 e iguais se tornam 0.
     - Ex: `111 ^ 100` os bits resultantes serão `011`, pois quando são opostos o bit comparado vira 1. Se fosse `110 ^ 010` o resultado seria `100`.
@@ -93,21 +93,21 @@
     - `1 ^ 0` = 1
     - `1 ^ 1` = 0
   - **Operador NOT (~)**
-    - Diferente dos outros operadores, não necessita de dois parâmetros para realizar a operação.
-    - Faz a troca dos bits do valor sendo operado.
-    - Ex: `100` resultaria nos bits `011`
+    - Diferente dos outros operadores, não necessita de dois operandos para realizar a operação.
+    - Faz a inversão de todos os bits do valor sendo operado.
+    - Ex: `100` resultaria nos bits `011` (considerando apenas esses 3 bits).
     - `~1` = 0
     - `~0` = 1
   - **Left shifting**
-    - Usa dois operadores, `a<<b`, a é o valor a sofrer a mudança nos bits, b é a quantidade de *bits* que queremos trocar.
-    - Os bits serão movidos para equerda conforme a quantidade de posições que indicamos.
-    - Nunca usar números negativos como parâmetro, terá um comportamento inesperado.
-    - Cuidade ao usar parâmetros maiores que a quantidade suportada pelo tipo da variável usada. Por exemplo: `a<<33` a sendo armazenado em variável de 32 bits.
+    - Usa dois operandos, `a<<b`, onde `a` é o valor a sofrer a mudança nos bits e `b` é a quantidade de *bits* que queremos deslocar.
+    - Os bits serão movidos para a esquerda conforme a quantidade de posições que indicamos.
+    - Evite usar números negativos como parâmetro, pois o comportamento depende da linguagem e pode gerar erro ou resultado inesperado.
+    - Cuidado ao usar valores maiores que a quantidade de bits suportada pelo tipo da variável. Por exemplo: `a<<33` com `a` sendo armazenado em uma variável de 32 bits.
     - Ex:
       - [Go](./golang/1-bitwise/bitwise.go)
       - [Java](./java/1-bitwise/Bitwise.java)
   - **Right shifting**
-    - Semelhante ao **left shifting**, diferença é o sentido que vai para a direita.
+    - Semelhante ao **left shifting**, a diferença é que o deslocamento ocorre para a direita.
     - `a>>b` segue as mesmas regras do **left shifting**.
 
 ## Array
