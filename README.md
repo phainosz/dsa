@@ -20,6 +20,10 @@ Estruturas de dados e algoritmos são fundamentais na ciência da computação, 
 
 São utilizados para resolver problemas em software, desde o gerenciamento de grandes volumes de dados até a otimização da performance de operações.
 
+Algoritmo é um conjunto de instruções bem definidas para resolver um problema.
+
+Estrutura de dados é o termo usado para determinar uma forma de armazenar e organizar dados em um computador.
+
 Em DSA (*Data Structures and Algorithms*), o foco principal é resolver problemas de forma eficiente e escalável. Para avaliar a eficiência de um algoritmo, analisamos dois tipos de complexidade:
 
 - **Time complexity**: tempo de execução do algoritmo em relação ao tamanho da entrada.
@@ -160,34 +164,35 @@ Ex:
 Usa dois *ponteiros* que percorrem os elementos, podendo ser de direções opostas(inicio e fim) ou mesma direção com passos diferentes, dependendo do problema.
 
 Exemplos:
-  ```
-  // reverse array
-  function reverse(arr)
-    left = 0
-    right = arr length -1      
 
-    while left < right 
-      // swap elements at left and right pointers
-      tmp = arr[left]
-      arr[left] = arr[right]
-      arr[right] = tmp
+```
+// reverse array
+function reverse(arr)
+  left = 0
+  right = arr length -1      
 
-      left++ // move left pointer to the right
-      right-- // move right pointer to the left
-    
-  function isPalindrome(str):
-    // str: string to check for palindrome
-    left = 0
-    right = arr length -1
+  while left < right 
+    // swap elements at left and right pointers
+    tmp = arr[left]
+    arr[left] = arr[right]
+    arr[right] = tmp
 
-    while left < right
-      if str[left] != str[right] // if characters at the pointers do not match
-          return false // return false (not a palindrome)
-      left++ // move left pointer to the right
-      right-- // move right pointer to the left
+    left++ // move left pointer to the right
+    right-- // move right pointer to the left
+  
+function isPalindrome(str):
+  // str: string to check for palindrome
+  left = 0
+  right = arr length -1
 
-    return true
-  ```
+  while left < right
+    if str[left] != str[right] // if characters at the pointers do not match
+        return false // return false (not a palindrome)
+    left++ // move left pointer to the right
+    right-- // move right pointer to the left
+
+  return true
+```
 
 ## Recursion
 
@@ -203,17 +208,19 @@ Geralmente temos 3 partes em **recursão**:
   - Retorno/resultado: é quando a recursão termina e combina o resultado da pilha de execução.
 
 Ex:
-    ```
-    function fibonacci(n)
-      // base case: if n is 0 or 1, return n
-      if n == 0
-      return n
-      else if n == 1
-      return 1
 
-      // recursive case: sum of two previous fibonacci numbers
-      return fibonacci(n -1) + fibonacci(n -2)
-    ```
+```
+function fibonacci(n)
+  // base case: if n is 0 or 1, return n
+  if n == 0
+  return n
+  else if n == 1
+  return 1
+
+  // recursive case: sum of two previous fibonacci numbers
+  return fibonacci(n -1) + fibonacci(n -2)
+```
+
   - [Go](./golang/3-recursion/recursion.go)
   - [Java](./java/3-recursion/Main.java)
 
@@ -274,16 +281,18 @@ Pode ser quebrados em passos a serem seguidos:
   - *Passo 6* Não encontrado o item, retornar informando que o item não foi encontrado.
 
 Ex:
-  ```
-  function linearSearch(array, target)
-    // target is the value we're searching for
 
-    for element in array
-      if element == target
-        return element index
-    
-    return -1
-  ```
+```
+function linearSearch(array, target)
+  // target is the value we're searching for
+
+  for element in array
+    if element == target
+      return element index
+  
+  return -1
+```
+
   - [GO](./golang/7-linearsearch/linearsearch.go)
   - [Java](./java/7-linearsearch/Main.java)
 
@@ -302,25 +311,27 @@ O passo a passo é o seguinte:
   - *Passo 5* se não encontrar o elemento buscado no array, retornar informando que o item não foi encontrado.
 
 Ex:
-  ```
-  function binarySearch(array, target)
-    // array need to be sorted
-    // target is the value we're searching for
-    
-    left = 0
-    right = array length -1
 
-    while left <= right
-      mid = left + (right - left) / 2
-      
-      if array[mid] == target // check if middle element is the target
-        return mid
-      else if array[mid] < target // if target is greater, search the right half
-        left = mid + 1
-      else // if target is smaller, search the left half
-        right = mid - 1       
-    return -1
-  ```
+```
+function binarySearch(array, target)
+  // array need to be sorted
+  // target is the value we're searching for
+  
+  left = 0
+  right = array length -1
+
+  while left <= right
+    mid = left + (right - left) / 2
+    
+    if array[mid] == target // check if middle element is the target
+      return mid
+    else if array[mid] < target // if target is greater, search the right half
+      left = mid + 1
+    else // if target is smaller, search the left half
+      right = mid - 1       
+  return -1
+```
+
   - [GO](./golang/8-binarysearch/binarysearch.go)
   - [Java](./java/8-binarysearch/Main.java)
 
